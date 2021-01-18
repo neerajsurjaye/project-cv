@@ -31,7 +31,6 @@ class EditText extends react.Component {
     setEdit = () => {
         this.setState(() => {
             if (this.state.edit === 0) {
-
                 return { edit: 1 }
             }
 
@@ -41,7 +40,7 @@ class EditText extends react.Component {
     }
 
     render() {
-        return <div>{this.comp()}</div>
+        return this.comp();
     }
 }
 
