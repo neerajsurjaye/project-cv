@@ -1,15 +1,13 @@
-
-
-import EditText from "./Component/EditText"
+import GeneralInfo from "./Component/GeneralInfo"
+import EduExp from "./Component/EduExp"
 
 function App() {
   return (
-    <div className="App">
-      <EditText value="Name" />
-      <EditText value="Surname" />
-      <EditText value="Date" />
-
+    <div>
+      <GeneralInfo />
+      <EduExp />
     </div>
+
   );
 }
 
