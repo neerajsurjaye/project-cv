@@ -1,14 +1,14 @@
 import react from "react";
 import ShowData from "./ShowDataSchool";
 
-class EduExp extends react.Component {
+class PraExp extends react.Component {
     constructor(props) {
         super();
         this.state = {
-            school: "",
-            from: 0,
-            to: 0,
-            Qualification: "",
+            company: "",
+            title: "",
+            tasks: "",
+            exp: "",
             edit: 0,
             data: []
         }
@@ -26,42 +26,40 @@ class EduExp extends react.Component {
         })
     }
 
-    updateSchool = (e) => {
+    updateCompany = (e) => {
         // console.log(e.target.value, "  ", this.state.school);
-        this.setState({ school: e.target.value });
+        this.setState({ company: e.target.value });
     }
-    updateFrom = (e) => {
+    updateTitle = (e) => {
         // console.log(e.target.value, "  ", this.state.school);
-        this.setState({ from: e.target.value });
+        this.setState({ title: e.target.value });
     }
-    updateTo = (e) => {
+    updateTasks = (e) => {
         // console.log(e.target.value, "  ", this.state.school);
-        this.setState({ to: e.target.value });
+        this.setState({ tasks: e.target.value });
     }
-    updateQual = (e) => {
+    updateExp = (e) => {
         // console.log(e.target.value, "  ", this.state.school);
-        this.setState({ Qualification: e.target.value });
-        // console.log(this.state.Qualification);
+        this.setState({ exp: e.target.value });
     }
 
     addQuali = () => {
         return <div>
-            <label>School : </label> <input type="text" onChange={this.updateSchool} value={this.state.school}></input>
-            <label>From : </label> <input type="text" onChange={this.updateFrom} value={this.state.from}></input>
-            <label>To : </label> <input type="text" onChange={this.updateTo} value={this.state.to}></input>
-            <label>Qualification : </label> <input type="text" onChange={this.updateQual} value={this.state.Qualification}></input>
+            <label>CompanyName : </label> <input type="text" onChange={this.updateCompany} value={this.state.company}></input>
+            <label>Title : </label> <input type="text" onChange={this.updateTitle} value={this.state.title}></input>
+            <label>Tasks : </label> <input type="text" onChange={this.updateTasks} value={this.state.tasks}></input>
+            <label>Year Experience : </label> <input type="text" onChange={this.updateExp} value={this.state.exp}></input>
             <input type="button" value="submit" onClick={this.submitQuali}></input>
         </div >
     }
 
     submitQuali = () => {
         let data = {
-            school: this.state.school,
-            from: this.state.from,
-            to: this.state.to,
-            Qualification: this.state.Qualification
+            company: this.state.company,
+            title: this.state.title,
+            tasks: this.state.tasks,
+            exp: this.state.exp
         };
-        console.log(data.Qualifcation);
 
         this.setState((prevState) => {
             let prevData = prevState.data.map(e => e);
@@ -82,8 +80,7 @@ class EduExp extends react.Component {
             let data = [];
             let ts = this.state;
             for (let i = 0; i < this.state.data.length; i++) {
-
-                data.push(<ShowData key={i} index={i} school={ts.data[i].school} from={ts.data[i].from} to={ts.data[i].to} qual={ts.data[i].Qualification} delData={this.delEdu} />)
+                data.push(<ShowData key={i} index={i} school={ts.data[i].company} from={ts.data[i].title} to={ts.data[i].tasks} qual={ts.data[i].exp} delData={this.delEdu} />)
             }
             return <div>
                 {data}
@@ -119,4 +116,4 @@ class EduExp extends react.Component {
     }
 }
 
-export default EduExp;
+export default PraExp;

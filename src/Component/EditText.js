@@ -12,15 +12,17 @@ class EditText extends react.Component {
     comp = () => {
 
         if (this.state.edit === 1) {
-            return <div>
-                <input type="text" value={this.state.value} onChange={this.updateValue}></input>
-                <input type="button" value="Save" onClick={this.setEdit}></input>
+            return <div className="Text">
+                <input type="text" value={this.state.value} onChange={this.updateValue} ></input>
+                <input type="button" value="Save" onClick={this.setEdit} className="button" ></input>
             </div>
         }
 
-        return <div>
-            <label >{this.state.value}</label>
-            <input type="button" value="Edit" onClick={this.setEdit}></input>
+        return <div className="Text">
+            <div >
+                <label >{this.state.value}</label>
+            </div>
+            <input type="button" value="Edit" onClick={this.setEdit} className="button"></input>
         </div>
     }
 
