@@ -45,12 +45,20 @@ class EduExp extends react.Component {
     }
 
     addQuali = () => {
-        return <div>
-            <label>School : </label> <input type="text" onChange={this.updateSchool} value={this.state.school}></input>
-            <label>From : </label> <input type="text" onChange={this.updateFrom} value={this.state.from}></input>
-            <label>To : </label> <input type="text" onChange={this.updateTo} value={this.state.to}></input>
-            <label>Qualification : </label> <input type="text" onChange={this.updateQual} value={this.state.Qualification}></input>
-            <input type="button" value="submit" onClick={this.submitQuali}></input>
+        return <div className="addQuali">
+            <div>
+                <label>School : </label> <input type="text" onChange={this.updateSchool} value={this.state.school}></input>
+            </div>
+            <div>
+                <label>From : </label> <input type="text" onChange={this.updateFrom} value={this.state.from}></input>
+            </div>
+            <div>
+                <label>To : </label> <input type="text" onChange={this.updateTo} value={this.state.to}></input>
+            </div>
+            <div>
+                <label>Qualification : </label> <input type="text" onChange={this.updateQual} value={this.state.Qualification}></input>
+            </div>
+            <input type="button" value="submit" onClick={this.submitQuali} className="button"></input>
         </div >
     }
 
@@ -74,7 +82,7 @@ class EduExp extends react.Component {
     }
 
     showEdu = () => {
-        let subButton = <input type="button" value="Add" onClick={this.setEdit}></input>;
+        let subButton = <input type="button" value="Add" onClick={this.setEdit} className="button"></input>;
         if (this.state.data.length === 0) {
             return subButton;
         } else {

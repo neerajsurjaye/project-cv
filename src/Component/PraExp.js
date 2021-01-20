@@ -72,7 +72,7 @@ class PraExp extends react.Component {
     }
 
     showEdu = () => {
-        let subButton = <input type="button" value="Add" onClick={this.setEdit}></input>;
+        let subButton = <input type="button" value="Add" onClick={this.setEdit} className="button"></input>;
         if (this.state.data.length === 0) {
             return subButton;
         } else {

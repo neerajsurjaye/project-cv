@@ -7,7 +7,7 @@ class ShowData extends react.Component {
             <label>From : {this.props.from} </label>
             <label>To :{this.props.to} </label>
             <label>Qualifcation : {this.props.qual} </label>
-            <input type="button" value="delete" onClick={() => { this.props.delData(this.props.index) }}></input>
+            <input type="button" value="delete" className="button" onClick={() => { this.props.delData(this.props.index) }}></input>
         </div>
     }
 }
