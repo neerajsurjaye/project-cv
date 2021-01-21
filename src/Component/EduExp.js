@@ -1,5 +1,5 @@
 import react from "react";
-import ShowData from "./ShowDataSchool";
+import ShowData from "./ShowDataPrac";
 
 class EduExp extends react.Component {
     constructor(props) {

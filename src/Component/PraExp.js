@@ -1,5 +1,5 @@
 import react from "react";
-import ShowData from "./ShowDataSchool";
+import ShowData from "./ShowDataPrac";
 
 class PraExp extends react.Component {
     constructor(props) {
@@ -91,7 +91,7 @@ class PraExp extends react.Component {
             for (let i = 0; i < this.state.data.length; i++) {
                 data.push(<ShowData key={i} index={i} school={ts.data[i].company} from={ts.data[i].title} to={ts.data[i].tasks} qual={ts.data[i].exp} delData={this.delEdu} />)
             }
-            return <div>
+            return <div className="showPra">
                 {data}
                 {subButton}
             </div>
