@@ -3,16 +3,8 @@ import ShowData from "./ShowDataPrac";
 
 class EduExp extends react.Component {
     constructor(props) {
-        super();
-        this.state = {
-            school: "",
-            from: 0,
-            to: 0,
-            Qualification: "",
-            edit: 0,
-            data: []
-        }
-
+        super(props);
+        this.state = this.props.EduExp;
         this.delEdu = this.delEdu.bind(this);
     }
 
@@ -24,6 +16,8 @@ class EduExp extends react.Component {
                 data: prevData
             }
         })
+
+        this.props.getEdu(this.state);
     }
 
     updateSchool = (e) => {
@@ -69,8 +63,8 @@ class EduExp extends react.Component {
             to: this.state.to,
             Qualification: this.state.Qualification
         };
-        console.log(data.Qualifcation);
-
+        // console.log(data.Qualifcation);
+        // console.log("1")
         this.setState((prevState) => {
             let prevData = prevState.data.map(e => e);
             prevData.push(data);
@@ -79,6 +73,10 @@ class EduExp extends react.Component {
                 edit: 0
             };
         })
+
+        // console.log("2")
+        this.props.getEdu(this.state);
+        // console.log("3")
     }
 
     showEdu = () => {
@@ -116,9 +114,9 @@ class EduExp extends react.Component {
         }
     }
 
+
     render() {
-
-
+        console.log(this.state);
         return (
             <div className="EduExp">
                 <h3 className="heading">Educational Experience</h3>
