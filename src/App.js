@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <h1>CV Generator</h1>
       <GeneralInfo />
+      <div className="line"></div>
       <EduExp />
       <PraExp />
     </div>

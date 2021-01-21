@@ -50,10 +50,10 @@ class EduExp extends react.Component {
                 <label>School : </label> <input type="text" onChange={this.updateSchool} value={this.state.school}></input>
             </div>
             <div>
-                <label>From : </label> <input type="text" onChange={this.updateFrom} value={this.state.from}></input>
+                <label>From : </label> <input type="date" onChange={this.updateFrom} value={this.state.from}></input>
             </div>
             <div>
-                <label>To : </label> <input type="text" onChange={this.updateTo} value={this.state.to}></input>
+                <label>To : </label> <input type="date" onChange={this.updateTo} value={this.state.to}></input>
             </div>
             <div>
                 <label>Qualification : </label> <input type="text" onChange={this.updateQual} value={this.state.Qualification}></input>
@@ -93,7 +93,7 @@ class EduExp extends react.Component {
 
                 data.push(<ShowData key={i} index={i} school={ts.data[i].school} from={ts.data[i].from} to={ts.data[i].to} qual={ts.data[i].Qualification} delData={this.delEdu} />)
             }
-            return <div>
+            return <div className="showEdu">
                 {data}
                 {subButton}
             </div>
@@ -120,7 +120,8 @@ class EduExp extends react.Component {
 
 
         return (
-            <div>
+            <div className="EduExp">
+                <h3 className="heading">Educational Experience</h3>
                 {this.handleRender()}
             </div>
         )

@@ -63,6 +63,7 @@ h1{
     font-weight: 600px;
     border-radius: 4px;
     cursor: pointer;
+    width: 100px;
 }
 
 .button:hover{
@@ -71,10 +72,84 @@ h1{
 
 
 .addQuali{
-
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin:20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .addQuali label{
     display: inline-block;
     width: 100px;
+}
+
+.addQuali>div{
+    margin: 5px 0;
+}
+
+.addQuali input[type="text"] , .addQuali input[type="date"] {
+    height: 1.3rem;
+    border-radius: 5px;
+    border: grey solid 1px;
+    width: 150px;
+    padding-left: 15px;
+}
+
+.schoolData{
+    display: flex;
+    border-top: 2px solid rgb(216,216,216);
+    width: 100%;
+    background-color:  #f8f9fa;
+    margin: 15px 0;
+    padding: 15px;
+}
+
+.schoolData > div{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+.schoolData labeln{
+    display: inline-block;
+    width: 150px;
+}
+
+.delBtn{
+    height: 35px;
+    font-size: 0.8rem;
+}
+
+.line{
+    height: 2px;
+    width: 70%;
+    margin: 15px 0;
+    background-color: rgb(216,216,216);
+}
+
+.heading{
+    width: 75%;
+}
+
+.EduExp{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}
+
+
+.showEdu{
+    width: 75%;
+}
+
+.wide{
+    display: inline-block;
+    width: 150px;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: 100;
 }
