@@ -44,12 +44,21 @@ class PraExp extends react.Component {
     }
 
     addQuali = () => {
-        return <div>
-            <label>CompanyName : </label> <input type="text" onChange={this.updateCompany} value={this.state.company}></input>
-            <label>Title : </label> <input type="text" onChange={this.updateTitle} value={this.state.title}></input>
-            <label>Tasks : </label> <input type="text" onChange={this.updateTasks} value={this.state.tasks}></input>
-            <label>Year Experience : </label> <input type="text" onChange={this.updateExp} value={this.state.exp}></input>
-            <input type="button" value="submit" onClick={this.submitQuali}></input>
+        return <div className="addQuali">
+            <div>
+                <label>CompanyName : </label> <input type="text" onChange={this.updateCompany} value={this.state.company}></input>
+            </div>
+            <div>
+                <label>Title : </label> <input type="text" onChange={this.updateTitle} value={this.state.title}></input>
+            </div>
+            <div>
+                <label>Tasks : </label> <input type="text" onChange={this.updateTasks} value={this.state.tasks}></input>
+            </div>
+            <div>
+                <label>Year Experience : </label> <input type="text" onChange={this.updateExp} value={this.state.exp}></input>
+            </div>
+
+            <input className="button" type="button" value="submit" onClick={this.submitQuali}></input>
         </div >
     }
 
@@ -109,7 +118,8 @@ class PraExp extends react.Component {
 
 
         return (
-            <div>
+            <div className="PraExp">
+                <h3 className="heading">Practical Experience </h3>
                 {this.handleRender()}
             </div>
         )

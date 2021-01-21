@@ -10,6 +10,7 @@ function App() {
       <GeneralInfo />
       <div className="line"></div>
       <EduExp />
+      <div className="line"></div>
       <PraExp />
     </div>
 

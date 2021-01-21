@@ -21,7 +21,8 @@ h1{
     flex-direction: column;
     width: 70%;
     align-items: center;
-    margin-top: 25px;
+    margin: 25px 0;
+    padding: 25px 0;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.15) ;
@@ -83,7 +84,7 @@ h1{
 
 .addQuali label{
     display: inline-block;
-    width: 100px;
+    width: 130px;
 }
 
 .addQuali>div{
@@ -125,7 +126,7 @@ h1{
 
 .line{
     height: 2px;
-    width: 70%;
+    width: 50%;
     margin: 15px 0;
     background-color: rgb(216,216,216);
 }
@@ -134,7 +135,7 @@ h1{
     width: 75%;
 }
 
-.EduExp{
+.EduExp,.PraExp{
     display: flex;
     flex-direction: column;
     width: 70%;
