@@ -31,6 +31,9 @@ h1{
 
 .Text{
     display: flex;
+    margin: 5px 0;
+    padding: 8px 0;
+
 }
 
 .Text > div {
@@ -122,6 +125,12 @@ h1{
 .delBtn{
     height: 35px;
     font-size: 0.8rem;
+}
+
+.delBtn:hover{
+    height: 35px;
+    font-size: 0.8rem;
+    background-color: #ff8484;
 }
 
 .line{

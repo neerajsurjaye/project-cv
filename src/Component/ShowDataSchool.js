@@ -1,7 +1,9 @@
 import react from "react";
+import VisButton from "./VisButton"
 
 class ShowData extends react.Component {
     render() {
+        console.log(this.props.button);
         return <div className="schoolData">
             <div>
                 <div>
@@ -17,7 +19,8 @@ class ShowData extends react.Component {
                     <label className="wide">Qualifcation : </label> <label>{this.props.qual} </label>
                 </div>
             </div>
-            <input type="button" value="delete" className="button delBtn" onClick={() => { this.props.delData(this.props.index) }}></input>
+            {/* <input type="button" value="delete" className="button delBtn" onClick={() => { this.props.delData(this.props.index) }}></input> */}
+            <VisButton render={this.props.button} value="delete" className="button delBtn" onClick={() => { this.props.delData(this.props.index) }} />
         </div>
     }
 }

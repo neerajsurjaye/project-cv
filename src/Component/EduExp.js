@@ -1,11 +1,14 @@
 import react from "react";
-import ShowData from "./ShowDataPrac";
+import ShowData from "./ShowDataSchool";
+import VisButton from "./VisButton";
+
 
 class EduExp extends react.Component {
     constructor(props) {
         super(props);
         this.state = this.props.EduExp;
         this.delEdu = this.delEdu.bind(this);
+        this.setEdit = this.setEdit.bind(this);
     }
 
     delEdu = (index) => {
@@ -80,7 +83,7 @@ class EduExp extends react.Component {
     }
 
     showEdu = () => {
-        let subButton = <input type="button" value="Add" onClick={this.setEdit} className="button"></input>;
+        let subButton = <VisButton render={this.props.button} value="Add" onClick={this.setEdit} className="button" />;
         if (this.state.data.length === 0) {
             return subButton;
         } else {
@@ -89,7 +92,7 @@ class EduExp extends react.Component {
             let ts = this.state;
             for (let i = 0; i < this.state.data.length; i++) {
 
-                data.push(<ShowData key={i} index={i} school={ts.data[i].school} from={ts.data[i].from} to={ts.data[i].to} qual={ts.data[i].Qualification} delData={this.delEdu} />)
+                data.push(<ShowData key={i} index={i} button={this.props.button} school={ts.data[i].school} from={ts.data[i].from} to={ts.data[i].to} qual={ts.data[i].Qualification} delData={this.delEdu} />)
             }
             return <div className="showEdu">
                 {data}
@@ -116,7 +119,7 @@ class EduExp extends react.Component {
 
 
     render() {
-        console.log(this.state);
+        console.log("eud exp : ", this.props.button);
         return (
             <div className="EduExp">
                 <h3 className="heading">Educational Experience</h3>

@@ -1,12 +1,16 @@
 import react from "react";
+import VisButton from "./VisButton";
 
 class EditText extends react.Component {
     constructor(props) {
         super(props);
         this.state = {
             value: this.props.value,
-            edit: 0
+            edit: 0,
+
         }
+
+        this.setEdit = this.setEdit.bind(this);
     }
 
     comp = () => {
@@ -22,7 +26,7 @@ class EditText extends react.Component {
             <div >
                 <label >{this.state.value}</label>
             </div>
-            <input type="button" value="Edit" onClick={this.setEdit} className="button"></input>
+            <VisButton value="Edit" render={this.props.buttons} className="button" onClick={this.setEdit} />
         </div>
     }
 
@@ -31,6 +35,7 @@ class EditText extends react.Component {
     }
 
     setEdit = () => {
+        console.log("setEdit");
         this.setState(() => {
             if (this.state.edit === 0) {
                 return { edit: 1 }

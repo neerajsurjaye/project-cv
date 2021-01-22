@@ -1,9 +1,9 @@
 import react from "react";
 
 class VisButton extends react.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         if (this.props.render === "1") {

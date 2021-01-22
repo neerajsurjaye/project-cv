@@ -1,19 +1,14 @@
 import react from "react";
 import ShowData from "./ShowDataPrac";
+import VisButton from "./VisButton";
 
 class PraExp extends react.Component {
     constructor(props) {
-        super();
-        this.state = {
-            company: "",
-            title: "",
-            tasks: "",
-            exp: "",
-            edit: 0,
-            data: []
-        }
+        super(props);
+        this.state = this.props.PraExp;
 
         this.delEdu = this.delEdu.bind(this);
+        this.setEdit = this.setEdit.bind(this);
     }
 
     delEdu = (index) => {
@@ -24,6 +19,8 @@ class PraExp extends react.Component {
                 data: prevData
             }
         })
+
+        this.props.getPra();
     }
 
     updateCompany = (e) => {
@@ -78,10 +75,12 @@ class PraExp extends react.Component {
                 edit: 0
             };
         })
+
+        this.props.getPra();
     }
 
     showEdu = () => {
-        let subButton = <input type="button" value="Add" onClick={this.setEdit} className="button"></input>;
+        let subButton = <VisButton render={this.props.button} value="Add" onClick={this.setEdit} className="button" />;
         if (this.state.data.length === 0) {
             return subButton;
         } else {
@@ -89,7 +88,7 @@ class PraExp extends react.Component {
             let data = [];
             let ts = this.state;
             for (let i = 0; i < this.state.data.length; i++) {
-                data.push(<ShowData key={i} index={i} school={ts.data[i].company} from={ts.data[i].title} to={ts.data[i].tasks} qual={ts.data[i].exp} delData={this.delEdu} />)
+                data.push(<ShowData key={i} index={i} button={this.props.button} school={ts.data[i].company} from={ts.data[i].title} to={ts.data[i].tasks} qual={ts.data[i].exp} delData={this.delEdu} />)
             }
             return <div className="showPra">
                 {data}
