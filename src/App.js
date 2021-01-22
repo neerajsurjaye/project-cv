@@ -25,7 +25,8 @@ class App extends react.Component {
         edit: 0,
         data: []
       },
-      buttons: "1"
+      buttons: "1",
+      btnVal: "Preview"
 
     }
 
@@ -44,10 +45,16 @@ class App extends react.Component {
 
   viewBut = () => {
     if (this.state.buttons === "0") {
-      this.setState({ buttons: "1" });
+      this.setState({
+        buttons: "1",
+        btnVal: "Preview"
+      });
     }
     else {
-      this.setState({ buttons: "0" });
+      this.setState({
+        buttons: "0",
+        btnVal: "Update CV"
+      });
     }
   }
 
@@ -57,7 +64,7 @@ class App extends react.Component {
     return (
       <div className="App" >
         <h1>CV Generator</h1>
-        <input className="button" type="button" value="preview" onClick={this.viewBut}></input>
+        <input className="button" type="button" value={this.state.btnVal} onClick={this.viewBut}></input>
         <GeneralInfo buttons={this.state.buttons} />
         <div className="line"></div>
         <EduExp getEdu={this.getEdu} EduExp={this.state.EduExp} button={this.state.buttons} />
